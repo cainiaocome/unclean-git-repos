@@ -18,6 +18,7 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: 'stable'
+          cache: false # no external dependencies, so there is no go.sum to cache
 
       - name: Vet
         run: make vet

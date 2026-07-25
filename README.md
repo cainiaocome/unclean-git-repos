@@ -30,6 +30,22 @@ Run `make help` to list them:
 
 Override the install prefix, e.g. `make install PREFIX=/usr/local`.
 
+## Releasing
+
+Releases are cut by pushing a `vX.Y.Z` tag; the GitHub **Release** workflow then
+cross-compiles binaries for linux/darwin/windows (amd64 + arm64) and publishes
+them to a GitHub Release with auto-generated notes.
+
+```sh
+make release V=v1.2.3   # tag an explicit version and push it
+make bump-patch         # or bump from the latest tag: vX.Y.Z -> vX.Y.(Z+1)
+make bump-minor         #                               vX.Y.Z -> vX.(Y+1).0
+make bump-major         #                               vX.Y.Z -> v(X+1).0.0
+```
+
+The version reported by `unclean-git-repos -version` is derived from the git tag
+at build time (`git describe`).
+
 ## Usage
 
 ```sh
