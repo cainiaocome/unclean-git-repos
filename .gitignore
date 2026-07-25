@@ -1,0 +1,5 @@
+markdown-for-ai/
+
+# Build artifacts
+/bin/
+/unclean-git-repos
